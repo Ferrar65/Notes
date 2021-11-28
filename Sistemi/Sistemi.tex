@@ -1,0 +1,104 @@
+\documentclass{article}
+
+% Language setting
+% Replace `english' with e.g. `spanish' to change the document language
+\usepackage[english]{babel}
+
+% Set page size and margins
+% Replace `letterpaper' with`a4paper' for UK/EU standard size
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+% Useful packages
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+
+\title{APPUNI - SISTEMI}
+\author{Karim El-Metkoul  }
+
+\begin{document}
+\maketitle
+
+\section{TCP - UDP}
+TCP: Orientato alla connessione UDP: Non richiede una connessione
+Protocollo TFTP su rete locale non poggia su TCP ma su UDP perch`e la
+rete locale ha una bassa latenza e una bassa probabilit`a di errori.
+\\
+
+Anche il protocollo DNS su rete locale usa UDP, mentre su internet usa
+TCP. Due server DNS tra loro non dialogano un UDP ma in TCP, sempre sulla
+porta 53.
+\\
+Il DNS `e un protocollo critico perch`e i DNS di tutto il mondo devono parlarsi
+e scambiarsi informazioni. \\I regimi dittatoriali configurano i DNS presenti sul
+territorio in modo che non diano tutte le informazioni.
+Ognuno si deve fidare delle informazioni che gli vengono rilasciate dall'altro.
+Ci sono delle autorità superiori che controllano chi possiede i DNS. Se si verificano delle anomalie, le autorità riescono a risalire a chi ha creato le anomalie.
+Socket = IP + Porta L’header del TCP normalmente ha 20 bytes + da 0 a
+32 bytes opzionali.\\
+Sequence number = TCP tiene sotto controllo il flusso e da un ordine ai
+pacchetti. Acknowledgement number = chi riceve i dati comunica a chi li ha
+trasmessi il corretto recapito dei dati.\\
+Bit di controllo = quali funzioni sono attive in quel pacchetto. Ad esempio,
+se il pacchetto `e parte di un segmento fragmentato oppure no. Oppure se il
+pacchetto contiene oppure no un ACK number.\\
+Window = delimitare il numero massimo di pacchetti che possono essere
+spediti senza ricevere un ACK.\\
+Checksum = controllo degli errori nella trasmissione (sia header che dati)
+Selective ACK = vengono rinviati solo i segmenti persi e non tutti, come `e
+di default.\\
+Durante la fase di connessione (3 way handshake) si settano anche alcuni
+parametri della comunicazione che possono essere resettati durante la connessione. Ad esempio windows size dove ci si mette d’accordo sul numero massimo
+di segmenti che possono essere spediti prima di ricevere l’ACK.
+Se in un determinato momento ci sono tanti host che parlano con un server,
+il suo buffer si riempie e il server manda dei segmenti chiedendo di ridurre la
+finestra dei pacchetti massimi che si possono spedire ogni ACK.\\
+1
+I protocolli di oggi utilizzano le sliding windows e inviano un ACK ogni due
+segmenti che ricevono.\\
+Le dimensioni della finestra non vengono definite in termini di segmenti ma
+in termini di bytes, quindi la finestra viene modificata ogni due segmenti.
+Tipicamente la dimensione massima di un segmento `e di 1460 bytes ma pu`o
+essere modificato nel corso della connessione.
+Alla fine dipende sempre dai tempi.
+Guardare a casa il capitolo 15.\\
+
+\section{Dominio di coalizione}
+
+\subsection{Cyber-Security Cisco}
+
+Un Tecnico deve conoscere gli strumenti necessari per proteggere i propri individui.
+Le tecnologie nel tempo cambiano, perché le tecnologie continuano a cambiare nel tempo con le scoperte di nuove falle.
+\\È inutile sapere un metodo per attaccare a livello pratico ma bisogna continuare ad aggiornarsi.
+\\l'attacco di una rete possono dividersi in " White-Hats / Black-Hats " 
+\\I White-Hats controllano vulnerabilità per poi riferirle alle aziende.
+
+\subsection{Fase attacco di rete}
+
+la prima fase è quella di ricognizione, Bisogna prendere informazioni. 
+Bisogna informarsi sul Software-Hardware della azienda, 
+
+Configurazioni-accessi-servizi-applicativi
+\\Quando si conoscono le informazioni di un OS, si possono fare ricerche per trovare tool per aggirare il sistema operativo
+Molti attacchi provengono dal personale interno alla rete, Bisogna mettere un blocco per impossibilitare il personale ad aprire documentazione
+
+L'amministratore di rete: Deve tenere sempre sottocontollo lo stato dei device della sua rete.
+\\\\
+SNMP = ('Simple Network Management Protocol');
+Però questo servizio presenta falle, dunque bisogna bilanciare le risorse e la sicurezza di esse.
+
+\section{Capitolo 17}
+
+Disaster Recovery = aggiungere ridondanza alle connessioni.
+Sicurezza ridurre servizi in rete.
+
+CDP = protocollo che permettete di verificare la salute dei dispositivi di rete connessi al router.
+
+in molte aziende non hanno la presenza di device avendo tutto in cloud, le concessioni telefoniche (voip) e ip-phone.
+
+
+
+
+
+
+\end{document}
